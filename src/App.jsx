@@ -6,8 +6,7 @@ function App() {
 
   return (
     <>
-     
-<h1>Evento</h1>
+      <h1>Evento</h1>
     </>
   )
 }
