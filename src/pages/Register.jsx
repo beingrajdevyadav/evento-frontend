@@ -102,12 +102,7 @@ const Register = () => {
           <option value="admin">Admin</option>
         </select>
 
-        <input 
-        type="file" 
-        name="profilePic" 
-        id=""
-        onChange={handleChange}
-         />
+        
 
          <button type='submit'>Register</button>
       </form>
