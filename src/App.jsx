@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <h1>Evento</h1>
+      
 
       <Routes>
         <Route path='/' element={<Register/> } />

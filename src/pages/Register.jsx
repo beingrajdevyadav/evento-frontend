@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { registerUser } from '../features/auth/authSlice';
 import { useNavigate } from 'react-router-dom';
 
+import "../css/register.css"
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -54,58 +55,61 @@ const Register = () => {
     }
   }
   return (
-    <div>
-      <h2>User Registration</h2>
-      <hr />
+    <div className='register'>
+      <div className='form-wrapper'>
+        <h1>Evento Registration</h1>
 
-      {
-        error && <p>{error}</p>
-      }
 
-      <form action="" onSubmit={handleSubmit} encType='multipart/form-data'>
+        {
+          error && <p>{error}</p>
+        }
 
-        <input
-          type="text"
-          name='name'
-          placeholder='Enter Full Name'
-          value={formData.name}
-          onChange={handleChange}
-          minLength={3}
-          maxLength={25}
-        />
+        <form action="" onSubmit={handleSubmit} encType='multipart/form-data'>
 
-        <input
-          type="email"
-          name="email"
-          placeholder='Enter Your Email'
-          value={formData.email}
-          onChange={handleChange}
+          <input
+            type="text"
+            name='name'
+            placeholder='Enter Full Name'
+            value={formData.name}
+            onChange={handleChange}
+            minLength={3}
+            maxLength={25}
+            autoComplete='off'
+          />
 
-        />
+          <input
+            type="email"
+            name="email"
+            placeholder='Enter Your Email'
+            value={formData.email}
+            onChange={handleChange}
+            autoComplete='off'
+          />
 
-        <input
-          type="password"
-          name="password"
-          placeholder='Enter Strong Password'
-          value={formData.password}
-          onChange={handleChange}
+          <input
+            type="password"
+            name="password"
+            placeholder='Enter Strong Password'
+            value={formData.password}
+            onChange={handleChange}
+            autoComplete='off'
+          />
 
-        />
+          <div className="form-controls">
+            <select
+              name="role"
+              value={formData.role}
+              onChange={handleChange}
+            >
+              <option value="attendee">Attendee</option>
+              <option value="organizer">Organizer</option>
+              <option value="admin">Admin</option>
+            </select>
+            <button type='submit'>Register</button>
+          </div>
 
-        <select
-          name="role"
-          value={formData.role}
-          onChange={handleChange}
-        >
-          <option value="attendee">Attendee</option>
-          <option value="organizer">Organizer</option>
-          <option value="admin">Admin</option>
-        </select>
-
-        
-
-         <button type='submit'>Register</button>
-      </form>
+        </form>
+      </div>
     </div>
   )
 }
