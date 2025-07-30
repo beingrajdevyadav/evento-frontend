@@ -14,26 +14,19 @@ const Register = () => {
     email: "",
     password: "",
     role: "attendee",
-    profile: "",
-    profilePic: "",
   });
 
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
+    const { name, value } = e.target;
 
-    if (name === "profilePic" && files.length > 0) {
-      setFormData((prev) => ({
-        ...prev,
-        profilePic: files[0],
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
-    };
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
   };
 
   const handleSubmit = async (e) => {
@@ -41,13 +34,9 @@ const Register = () => {
     setError("");
 
     try {
-      const formDataToSend = new FormData();
 
-      Object.entries(formData).forEach(([key, value]) => {
-        formDataToSend.append(key, value);
-      });
 
-      await dispatch(registerUser(formDataToSend)).unwrap();
+      await dispatch(registerUser(formData)).unwrap();
       navigate("/login");
 
     } catch (error) {
@@ -60,11 +49,13 @@ const Register = () => {
         <h1>Evento Registration</h1>
 
 
+
         {
-          error && <p>{error}</p>
+          error ? <p>{typeof error === "string" ? error : error.message || "Registration failed"}</p> : null
         }
 
-        <form action="" onSubmit={handleSubmit} encType='multipart/form-data'>
+
+        <form action="" onSubmit={handleSubmit} >
 
           <input
             type="text"

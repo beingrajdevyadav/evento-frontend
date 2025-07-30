@@ -7,13 +7,18 @@ const API = axios.create({ baseURL: "https://evento-r1nz.onrender.com/api" });
 
 // to login
 export const loginUser = createAsyncThunk("auth/login", async (formData) => {
-    const res = await API.post("/auth/login", formData);
+    const res = await API.post("/auth/login", formData, {
+            headers: { "Content-Type": "application/json" }
+        });
     return res.data;
 });
 
 // to register
 export const registerUser = createAsyncThunk("auth/register", async (formData) => {
-    const res = await API.post("/auth/register", formData);
+    console.log(formData);
+    const res = await API.post("/auth/register", formData, {
+            headers: { "Content-Type": "application/json" }
+        });
     return res.data;
 })
 
