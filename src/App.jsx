@@ -17,9 +17,9 @@ function App() {
       <h1>Evento</h1>
 
       <Routes>
-        <Route path='/' element={<Home/> } />
+        <Route path='/' element={<Register/> } />
+        <Route path='/home' element={<Home/> } />
         <Route path='/login' element={<Login/> } />
-        <Route path='/register' element={<Register/> } />
         <Route path='/event/:id' element={<EventDetails/> } />
         <Route path='/dashboard' element={<Dashboard/> } />
         <Route path='*' element={<PageNotFound/> } />
