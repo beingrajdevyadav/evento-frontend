@@ -46,12 +46,12 @@ const Register = () => {
   return (
     <div className='register'>
       <div className='form-wrapper'>
-        <h1>Evento Registration</h1>
+        <h1 className='form-title'>Evento Registration</h1>
 
 
 
         {
-          error ? <p>{typeof error === "string" ? error : error.message || "Registration failed"}</p> : null
+          error ? <p className='error'>{typeof error === "string" ? error : error.message || "Registration failed"}</p> : null
         }
 
 

@@ -7,11 +7,16 @@
     background-color: #f1f1f1;
     
 }
-
+.form-wrapper h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #c2485d;
+}
 .form-wrapper{
     background-color: #fff;
     box-shadow: 0px 3px 510px #0000006c;
     padding: 2rem;
+    border-radius: 3px;
 }
 
 .form-wrapper input{
@@ -23,6 +28,7 @@
     border-radius: 5px;
     margin-bottom: .5rem;
     border: 1px solid #999;
+    color: #777;
 }
 
 .form-wrapper .form-controls{
@@ -40,16 +46,30 @@
     border-radius: 5px;
     margin-bottom: .5rem;
     border: 1px solid #999;
+    color: #777;
+
 }
 
 .form-controls button{
     height: 50px;
-    padding: 0 1rem;
+    padding: 0 2rem;
     cursor: pointer;
     outline: none;
     border: none;
     border-radius: 5px;
     margin-bottom: .5rem;
-    border: 1px solid #999;
+    /* border: 1px solid #999; */
+    background-color: #c2485d;
+    color: #fff;
+    transition: all .3s ease;
+}
+
+.form-controls button:hover{
+    background-color: #a83c50;
+}
+
+.form-wrapper .error{
+color: #a83c50;
+margin-bottom: .3rem;
 }
 
